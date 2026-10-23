@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f8f8f6" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="ふたりのレジ" />
+  <meta name="description" content="mia と紗絵、ふたりで使う物販レジ。会計・商品・売上を端末に保存。" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="icon-180.png" />
+  <link rel="icon" href="icon-192.png" sizes="192x192" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>ふたりのレジ | mia × 紗絵</title>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-header">
+      <div class="brand">
+        <div class="brand-symbol" aria-hidden="true"><span>m</span><span>s</span></div>
+        <div><div class="eyebrow">MIA × 紗絵</div><h1>ふたりのレジ<span class="brand-dot">.</span></h1></div>
+      </div>
+      <div class="status-area"><span class="status-dot" id="save-dot"></span><span id="save-status" aria-live="polite">保存データを読み込み中</span></div>
+    </header>
+
+    <nav class="top-nav" aria-label="メインメニュー">
+      <button type="button" class="nav-item is-active" data-tab="register"><span class="nav-symbol">▣</span><span>レジ</span></button>
+      <button type="button" class="nav-item" data-tab="products"><span class="nav-symbol">▦</span><span>商品管理</span></button>
+      <button type="button" class="nav-item" data-tab="reports"><span class="nav-symbol">▥</span><span>売上集計</span></button>
+      <button type="button" class="nav-item" data-tab="history"><span class="nav-symbol">◷</span><span>会計履歴</span></button>
+      <button type="button" class="nav-item" data-tab="settings"><span class="nav-symbol">⚙</span><span>保存・設定</span></button>
+    </nav>
+
+    <main id="main" class="main-content" tabindex="-1"><div class="loading">データを読み込んでいます…</div></main>
+    <footer class="app-footer"><span>ふたりのレジ / for mia & 紗絵</span><span>大切な売上は定期的にバックアップしてね。</span></footer>
+  </div>
+
+  <div id="modal-root" aria-live="polite"></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <input type="file" id="import-file" accept=".json,application/json" hidden />
+  <script src="app.js" defer></script>
+</body>
+</html>
